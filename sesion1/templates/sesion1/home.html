@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }} — DjangoLab01</title>
+    <link rel="stylesheet" href="{% static 'sesion1/css/landing.css' %}">
+</head>
+<body>
+    <nav class="nav">
+        <a class="logo" href="/">Django<span>Lab01</span></a>
+        <a class="nav-link" href="/admin/">Admin</a>
+    </nav>
+
+    <header class="hero">
+        <span class="badge">{{ titulo }} · Django {{ version_django }}</span>
+        <h1>Aprendiendo <em>Django</em> paso a paso</h1>
+        <p class="sub">
+            Laboratorio de desarrollo web con Python. Primera sesión funcional:
+            proyecto, app, vistas, plantillas y servidor en marcha.
+        </p>
+        <div class="cta-group">
+            <a class="btn btn-primary" href="/admin/">Entrar al panel</a>
+            <a class="btn btn-outline" href="https://docs.djangoproject.com/en/6.1/" target="_blank" rel="noopener">Documentación</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <article class="card">
+            <span class="icon">🐍</span>
+            <h3>Python 3.14</h3>
+            <p>Base moderna del proyecto, con entorno virtual aislado en .venv.</p>
+        </article>
+        <article class="card">
+            <span class="icon">⚡</span>
+            <h3>Django {{ version_django }}</h3>
+            <p>La versión más reciente del framework, instalada desde cero.</p>
+        </article>
+        <article class="card">
+            <span class="icon">🧩</span>
+            <h3>Patrón MVT</h3>
+            <p>Modelo–Vista–Template: esta página ya lo aplica de punta a punta.</p>
+        </article>
+        <article class="card">
+            <span class="icon">🤖</span>
+            <h3>Equipo de agentes IA</h3>
+            <p>10 agentes especializados asisten el desarrollo del laboratorio.</p>
+        </article>
+    </section>
+
+    <footer>
+        © 2026 {{ estudiante }} — DjangoLab01
+    </footer>
+</body>
+</html>
