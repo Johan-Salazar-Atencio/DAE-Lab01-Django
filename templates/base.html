@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DjangoLab01{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <nav class="nav">
+        <a class="logo" href="/">Django<span>Lab01</span></a>
+        <div class="nav-links">
+            <a class="nav-link" href="/">Inicio</a>
+            <a class="nav-link" href="{% url 'vet:listado' %}">Veterinaria</a>
+            <a class="nav-link" href="/admin/">Admin</a>
+        </div>
+    </nav>
+
+    <main class="page">
+        {% if messages %}
+            <ul class="alerts">
+                {% for message in messages %}
+                    <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        © 2026 Johan Salazar — DjangoLab01
+    </footer>
+</body>
+</html>

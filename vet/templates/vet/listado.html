@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}{{ titulo }} — DjangoLab01{% endblock %}
+
+{% block content %}
+<header class="page-head">
+    <h1>{{ titulo }}</h1>
+    <a class="btn btn-primary" href="{% url 'vet:nueva' %}">Registrar nueva mascota</a>
+</header>
+
+{% if mascotas %}
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Especie</th>
+                    <th>Raza</th>
+                    <th>Sexo</th>
+                    <th>Peso (kg)</th>
+                    <th>Dueño</th>
+                    <th>Teléfono</th>
+                    <th>Registrado</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mascota in mascotas %}
+                    <tr>
+                        <td>{{ mascota.nombre }}</td>
+                        <td>{{ mascota.get_especie_display }}</td>
+                        <td>{{ mascota.raza|default:"—" }}</td>
+                        <td>{{ mascota.get_sexo_display }}</td>
+                        <td>{{ mascota.peso_kg|default:"—" }}</td>
+                        <td>{{ mascota.nombre_dueno }}</td>
+                        <td>{{ mascota.telefono_dueno }}</td>
+                        <td>{{ mascota.fecha_registro|date:"d/m/Y" }}</td>
+                        <td>
+                            {% if mascota.activo %}
+                                <span class="tag tag-ok">Activo</span>
+                            {% else %}
+                                <span class="tag tag-off">Inactivo</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <p class="empty">Aún no hay mascotas registradas.</p>
+{% endif %}
+{% endblock %}

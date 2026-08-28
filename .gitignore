@@ -20,5 +20,8 @@ staticfiles/
 .DS_Store
 Thumbs.db
 
+# Obsidian (configuración local del vault)
+.obsidian/
+
 # Variables de entorno
 .env

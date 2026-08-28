@@ -1,0 +1,371 @@
+:root {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --primary: #44b78b;
+    --primary-dark: #2e9c72;
+    --accent: #6366f1;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --card: #16213a;
+    --border: #2d3b54;
+    --danger: #f87171;
+    --ok: #4ade80;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav a.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: .95rem;
+    transition: color .2s;
+}
+
+.nav a.nav-link:hover {
+    color: var(--primary);
+}
+
+.page {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-head h1 {
+    font-size: 1.75rem;
+}
+
+/* Hero (landing) */
+.hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.hero h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p.sub {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: .35rem .9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--primary);
+    font-size: .85rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: .75rem 1.75rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: .95rem;
+    transition: transform .15s, background .2s, border-color .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #08130d;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+}
+
+/* Tarjetas */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+    padding-bottom: 3rem;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    padding: 1.5rem;
+    transition: transform .2s, border-color .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.card .icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: .75rem;
+}
+
+.card h3 {
+    font-size: 1.05rem;
+    margin-bottom: .5rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: .925rem;
+}
+
+/* Tabla */
+.table-wrap {
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: .8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: .925rem;
+}
+
+th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: var(--bg-alt);
+}
+
+.tag {
+    display: inline-block;
+    padding: .15rem .6rem;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.tag-ok {
+    background: rgba(74, 222, 128, .15);
+    color: var(--ok);
+}
+
+.tag-off {
+    background: rgba(148, 163, 184, .15);
+    color: var(--text-muted);
+}
+
+/* Formulario */
+.form-wrap {
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.field label {
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: .5rem;
+    color: var(--text);
+    padding: .6rem .75rem;
+    font-size: .95rem;
+    font-family: inherit;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.field .help,
+.field .error {
+    font-size: .82rem;
+}
+
+.field .help {
+    color: var(--text-muted);
+}
+
+.field .error {
+    color: var(--danger);
+}
+
+.field-check {
+    flex-direction: row;
+    align-items: center;
+    gap: .6rem;
+}
+
+.field-check input {
+    width: auto;
+}
+
+.form-actions {
+    display: flex;
+    gap: .75rem;
+    margin-top: .5rem;
+}
+
+/* Alertas (messages) */
+.alerts {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.alert {
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    font-size: .9rem;
+    margin-bottom: .5rem;
+}
+
+.alert-success {
+    background: rgba(74, 222, 128, .12);
+    border: 1px solid rgba(74, 222, 128, .4);
+    color: var(--ok);
+}
+
+.alert-error {
+    background: rgba(248, 113, 113, .12);
+    border: 1px solid rgba(248, 113, 113, .4);
+    color: var(--danger);
+}
+
+.empty {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1px dashed var(--border);
+    border-radius: .75rem;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: .875rem;
+}
