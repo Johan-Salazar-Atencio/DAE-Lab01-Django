@@ -41,9 +41,9 @@ Abrir http://127.0.0.1:8000
 | Laboratorio | Estado | Entregables |
 |---|---|---|
 | **Lab 01 — Sesión 1** | ✅ Completado | Proyecto Django, app `sesion1`, landing, 10 agentes en `.opencode/agent/` |
-| **Lab 02 — Veterinaria** | ✅ **Completado** | Investigación de la problemática, 5 requisitos funcionales, modelo `Mascota` (12 campos), app `vet` (models/forms/views/urls/templates con herencia de `base.html` y 5 registros estáticos), Vault de Obsidian en `docs/` |
+| **Lab 02 — Veterinaria** | ✅ **Completado** | Investigación, 5 requisitos funcionales, modelo `Mascota` (12 campos), app `vet` (models/forms/views/urls/templates con herencia de `base.html` y 5 registros estáticos), flujo MVT y conexión con `config`, Vault de Obsidian en `docs/` |
 
-> **Confirmación Lab 02:** La documentación de los Ejercicios 1, 2 y 3 está en `docs/laboratorio-02/` y la app `vet` está implementada, migrada y verificada en local (HTTP 200 en `/vet/` y `/vet/nueva/`).
+> **Confirmación Lab 02:** La documentación de los Ejercicios 1–4 está en `docs/laboratorio-02/` (incluye `04-flujo-mvt-y-conexion.md`) y la app `vet` está implementada, migrada y verificada en local (HTTP 200 en `/vet/` y `/vet/nueva/`).
 
 ## Estructura
 
@@ -55,7 +55,12 @@ Abrir http://127.0.0.1:8000
 ├── templates/base.html     # base compartida
 ├── static/css/base.css     # estilos
 ├── docs/                   # Vault de Obsidian
+│   ├── README.md             # índice del vault
 │   └── laboratorio-02/
+│       ├── 01-investigacion-problematica.md
+│       ├── 02-requisitos-funcionales.md
+│       ├── 03-modelo-datos-paciente.md
+│       └── 04-flujo-mvt-y-conexion.md
 ├── manage.py
 └── .opencode/agent/        # 10 agentes IA
 ```
@@ -66,7 +71,7 @@ Abrir http://127.0.0.1:8000
 
 ## Documentación (Vault Obsidian)
 
-`docs/README.md` es el índice del vault. Abrir la carpeta `docs/` como vault en Obsidian.
+`docs/README.md` es el índice del vault. Abrir la carpeta `docs/` como vault en Obsidian. El Lab 02 aporta 4 documentos: investigación, requisitos, modelo de datos y **flujo MVT con conexión a `config`**.
 
 ## Licencia
 
